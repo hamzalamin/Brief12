@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6 form-wrapper">
         <h2 class="mb-4 text-center">@yield('title')</h2>
-        <form action="{{ $route }}" method="post" class="form-bg rounded-lg p-4" enctype="multipart/form-data">
+        <form action="{{ $route }}" method="post" class="main-input" enctype="multipart/form-data">
          @csrf
          @if ($isUpdate)
          @method('PUT')
@@ -25,6 +25,9 @@
                   {{-- <input type="text" class="" hidden id="image" name="image" value="{{ $recette->image }}"> --}}
                   <input type="file" class="form-control" id="image" name="image">
           </div>
+
+
+          
           </div>
           <div class="form-group">
             <label for="RecetteName">Recette Name:</label>
