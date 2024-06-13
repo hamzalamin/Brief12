@@ -39,11 +39,11 @@ class RecettesController extends Controller
     public function store(RecettesRequest $request)
     {
             $formsData = $request->validated();
-            if ($request->hasFile(key: 'image')) {
-                $formsData['image'] = $request->file(key: 'image')->store(path:'recette', options:'public');
+            if ($request->hasFile('image')) {
+                $formsData['image'] = $request->file('image')->store('recette', 'public');
                 
             }
-            // dd($formsData['image']);
+            //  dd($formsData['image']);
 
             
             recettes::create($formsData);
@@ -84,7 +84,6 @@ class RecettesController extends Controller
         $formsData = $request->validated();
         if ($request->hasFile(key: 'image')) {
             $formsData['image'] = $request->file(key: 'image')->store(path:'recette', options:'public');
-            // dd($formsData);
         }
         // $recette->fill($request->validated())->save();
         // dd($request->validated());
